@@ -9,6 +9,18 @@ section {
     margin: 30px 40px; 
 }
 
-h1, h2 {
+h1, h2, header p {
     color: #534582; 
+}
+
+h1, header p {
+    text-align: center;
+}
+
+a:hover {
+    color: green;
+}
+
+a:visited {
+    color: red;
 }
