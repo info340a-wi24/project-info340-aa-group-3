@@ -1,1 +1,14 @@
 /* proposal style sheet */
+
+/* font for the page */
+* {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+section {
+    margin: 30px 40px; 
+}
+
+h1, h2 {
+    color: #534582; 
+}
