@@ -3,6 +3,7 @@
 /* font for the page */
 * {
     font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #eee;
 }
 
 section {
@@ -23,4 +24,8 @@ a:hover {
 
 a:visited {
     color: red;
+}
+
+li {
+    list-style-type: circle;
 }
