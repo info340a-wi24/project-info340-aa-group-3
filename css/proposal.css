@@ -18,6 +18,10 @@ h1, header p {
     text-align: center;
 }
 
+h2 {
+    margin-left: 2rem;
+}
+
 a:hover {
     color: green;
 }
