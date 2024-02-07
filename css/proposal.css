@@ -3,6 +3,7 @@
 /* font for the page */
 * {
     font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #eee;
 }
 
 section {
@@ -17,10 +18,18 @@ h1, header p {
     text-align: center;
 }
 
+h2 {
+    margin-left: 2rem;
+}
+
 a:hover {
     color: green;
 }
 
 a:visited {
     color: red;
+}
+
+li {
+    list-style-type: circle;
 }
