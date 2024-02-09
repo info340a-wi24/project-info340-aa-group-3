@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Aelysha Sharma, Linda Giang, Jonathan Hugh Ortiz-Candelaria, Michaela Tran">
-    <meta name="description" content="Home Page for Protest Hub Project ">
+    <meta name="description" content="Feedback Page for Protest Hub Project ">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/fighting.png"> <a href="https://www.flaticon.com/free-icons/protest" title="protest icons"></a>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="css/style.css">
-    <title>Protests Hub</title>
+    <title>Protest Hub | Feedback</title>
 </head>
 <body>
     <header>
+        <!--Remove when form is made into pop-up -->
         <div class="navbar">
             <nav>
                 <a href="index.html" title="Home" style="text-decoration: none">
@@ -32,32 +34,40 @@
                 </a>
 
                 <!-- Placeholder for RSVP popup in index.html -->
-                <a href="rsvp-form.html" title="RSVP Form" style="text-decoration: none">
+                <a href="RSVP-form.html" title="RSVP Form" style="text-decoration: none">
                     <button> RSVP Form </button>
                 </a>
 
             </nav> 
-        </div>                
+        </div>
     </header>
 
-    <!-- Main page content -->
     <main>
         <section>
-            <h1>Protests Hub</h1>    
-            <h2 id="slogan">Make your voice heard. Find your people. It all starts with a search.</h2>
-            <div class="search-bar">
-                <input type="text" placeholder="Search protests.." name="search">   
-            </div>
-            <button type="submit"> Submit </button>
+            <h1>Protests Hub</h1>  
         </section>
+
+        <!--Feedback form-->
         <section>
-            
+            <form>
+                <h2>
+                    Submit Feedback
+                </h2>
+                <div id="input">
+                    <label for="name-input">Name: </label>
+                    <input name="name" placeholder="name">
+                    <label for="email-input">Email: </label>
+                    <input name="email" placeholder="email">
+                    <label for="feedback">Feedback: </label>
+                    <textarea id="feedback" name="feedback"></textarea>
+                </div>
+                <button type="submit"> Submit </button>
+            </form>
         </section>
     </main>
 
-    <!-- Page footer -->
     <footer>
-        
+
     </footer>
 </body>
 </html>
