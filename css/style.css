@@ -5,5 +5,17 @@
 #slogan {
     font-style: italic;
     font-size: .5em;
+}
 
+.search {
+    text-align: center;
+}
+
+.protest-list {
+    text-align: left;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
 }
