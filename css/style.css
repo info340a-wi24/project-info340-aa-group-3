@@ -1,5 +1,76 @@
 * {
-    font-family: 'DM Sans', 'DM Serif Display', 'Playfair Display', 'Lora';
+    font-family: 'DM Sans', sans-serif;
+}
+
+html {
+    background-color: rgb(250, 238, 209);
+}
+
+.navbar {
+    background-color: rgb(101, 69, 31);
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    color: rgb(250, 238, 209);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: rgb(200, 174, 125);
+    color: rgb(71, 47, 17);
+}
+
+.navbar a.active {
+    background-color: rgb(71, 47, 17);
+    color: rgb(255, 255, 255);
+}
+
+h1 {
+    color: rgb(34, 21, 5);
+    font-size: 
+}
+
+#slogan {
+    color: rgb(34, 21, 5);
+}
+/* consider nav for phones, how to show all links??
+*/
+@media (min-width: 598px) {
+    #hamburger-menu i {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+    }
+    body {
+
+    }
+    footer {
+    }
+}
+
+@media (min-width: 992px) {
+    nav a {
+        font-size: 1.5rem;
+    }
+    body {
+    }
+    h1 {
+    }
+    h2 {
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+    }
 }
 
 #slogan {
