@@ -6,6 +6,27 @@ body {
     background-color: rgb(250, 238, 209);
 }
 
+#w-img {
+    background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../img/BLM-header.jpg");  
+    background-size: contain;
+    font-size: 1.5em;
+}
+
+header h1, header h2, header #slogan {
+    text-align: center;
+    color: rgb(255, 246, 225);
+}
+
+header h1 {
+    padding-top: 2.5em;
+    margin-bottom: 0;
+}
+
+header h2 {
+    padding-bottom: 3em;
+    margin-top: 0;
+}
+
 .navbar {
     background-color: rgb(101, 69, 31);
     overflow: hidden;
