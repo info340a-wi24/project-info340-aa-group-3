@@ -76,6 +76,33 @@ main {
     opacity: 1;
 }
 
+/* to add extra room for scrolling*/
+html {
+    min-height: 50em;
+}
+
+/* header with image*/ 
+#w-img {
+    background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../img/BLM-header.jpg");  
+    background-size: contain;
+    font-size: 1.5em;
+}
+
+header h1, header h2, header #slogan {
+    text-align: center;
+    color: rgb(255, 246, 225);
+}
+
+header h1 {
+    padding-top: 2.5em;
+    margin-bottom: 0;
+}
+
+header h2 {
+    padding-bottom: 3em;
+    margin-top: 0;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -128,12 +155,111 @@ main {
     width: 100%;
     background-color: rgb(250, 238, 209);
     border-radius: 10px;
+
+#about {
+    margin: 1em 5em;
+}
+
+#about div {
+    max-width: 75%; /* space to add image to the side*/
+
+}
+
+#rsvp {
+    border: solid 1px rgb(71, 47, 17);
+    box-shadow: 0 0 5px rgb(71, 47, 17);
+    padding: 1em 1em 0 1em;
+    margin: 2em;
+    max-width: 400px;
+    background-color: rgb(255, 246, 225);
+}
+
+#rsvp #top {
+    font-size: 1em;
+    max-height: 2em;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+
+}
+
+#rsvp #confirm {
+    margin: 1em 0 1em 0.5em;
+    font-weight: normal;
+    padding-bottom: 1em;
+}
+
+/* Might change to icon instead of x */
+#rsvp #x {
+    max-height: 2em;
+    background-color: red;
+    border: none;
+
+}
+
+#rsvp p {
+    font-size: 1em;
+    font-weight: bold;
+
+}
+
+#rsvp #input div {
+    margin: 1em 0 1em 0.5em;
+    display: flex;
+    margin-bottom: 1em;
+}
+
+#rsvp #input label {
+    display: flex;
+    margin-right: .5em;
+}
+
+#rsvp input {
+    min-width: 50%;
+}
+
+#rsvp #submit, #feedback #submit {
+    margin: 0 0 1em .5em;
+}
+
+#feedback {
+    padding: 1em 1.5em 1.5em 1.5em;
+    margin: auto;
+    margin-top: 2em;
+    width: 50%;
+    background-color: rgb(255, 246, 225);
+}
+
+#feedback div {
+    margin: 1em 0 1em 0.5em;
+    display: flex;
+    margin-bottom: 1em;
+}
+
+#feedback label {
+    display: flex;
+    margin-right: .5em;
+}
+
+#feedback input, #feedback textarea {
+    min-width: 50%;
+}
+
+h1 {
+    color: rgb(34, 21, 5);
+    /* font-size:  */
 }
 
 
 .card-title {
     font-weight: bolder;
 }
+
+.map img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
 
 /* consider nav for phones, how to show all links??
 */
