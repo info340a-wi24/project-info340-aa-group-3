@@ -51,6 +51,7 @@ body {
 #rsvp #confirm {
     margin: 1em 0 1em 0.5em;
     font-weight: normal;
+    padding-bottom: 1em;
 }
 
 /* Might change to icon instead of x */
@@ -78,8 +79,35 @@ body {
     margin-right: .5em;
 }
 
-#rsvp #submit {
+#rsvp input {
+    min-width: 50%;
+}
+
+#rsvp #submit, #feedback #submit {
     margin: 0 0 1em .5em;
+}
+
+#feedback {
+    padding: 1em 1.5em 1.5em 1.5em;
+    margin: auto;
+    margin-top: 2em;
+    width: 50%;
+    background-color: rgb(255, 246, 225);
+}
+
+#feedback div {
+    margin: 1em 0 1em 0.5em;
+    display: flex;
+    margin-bottom: 1em;
+}
+
+#feedback label {
+    display: flex;
+    margin-right: .5em;
+}
+
+#feedback input, #feedback textarea {
+    min-width: 50%;
 }
 
 h1 {
