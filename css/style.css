@@ -160,10 +160,6 @@ h1 {
     max-width: 100%;
 }
 
-/* gonna try to make it "zoom" */
-.map img:hover {
-}
-
 /* consider nav for phones, how to show all links??
 */
 @media (min-width: 598px) {
