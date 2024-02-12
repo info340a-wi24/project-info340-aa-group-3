@@ -148,12 +148,22 @@ header h2 {
 
 h1 {
     color: rgb(34, 21, 5);
-    font-size: 
+    /* font-size:  */
 }
 
 #slogan {
     color: rgb(34, 21, 5);
 }
+
+.map img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* gonna try to make it "zoom" */
+.map img:hover {
+}
+
 /* consider nav for phones, how to show all links??
 */
 @media (min-width: 598px) {
