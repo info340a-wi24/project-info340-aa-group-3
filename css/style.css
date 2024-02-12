@@ -6,6 +6,12 @@ body {
     background-color: rgb(250, 238, 209);
 }
 
+/* to add extra room for scrolling*/
+html {
+    min-height: 50em;
+}
+
+/* header with image*/ 
 #w-img {
     background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../img/BLM-header.jpg");  
     background-size: contain;
@@ -49,6 +55,15 @@ header h2 {
 .navbar a.active {
     background-color: rgb(71, 47, 17);
     color: rgb(255, 255, 255);
+}
+
+#about {
+    margin: 1em 5em;
+}
+
+#about div {
+    max-width: 75%; /* space to add image to the side*/
+
 }
 
 #rsvp {
