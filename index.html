@@ -15,28 +15,27 @@
 </head>
 <body>
     <header>
-            <nav>
-                <div id="hamburger-menu">
-                   <a href="#" title="Menu">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
+            <nav class="navbar">
+                <div class="protest-hub">Protests Hub</div>
+                    <a href="#" class="hamburger-menu">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
                     </a>
-                </div>
-                <div class="navbar">
-                    <a class="active" href="index.html" title="Home" style="text-decoration: none">Home</a>
-
-                    <a href="about-page.html" title="About Us" style="text-decoration: none">About Us</a>
-
-                    <a href="map-page.html" title="Exploration Map" style="text-decoration: none">Exploration Map</a>
-
-                    <a href="feedback-form.html" title="Feedback Form" style="text-decoration: none">Feedback Form</a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a class="active" href="#" title="Home">Home</a></li>
+                        <li><a href="about-page.html" title="About Us">About Us</a></li>
+                        <li><a href="map-page.html" title="Exploration Map">Exploration Map</a></li>
+                        <li><a href="feedback-form.html" title="Feedback Form" >Feedback Form</a></li>
+                    </ul>
                 </div>
             </nav>                
     </header>
 
     <!-- Main page content -->
     <main>
-        <section class ="search">
-            <h1>Protests Hub</h1>    
+        <section class="search"> 
             <h2 id="slogan">Make your voice heard. Find your people. It all starts with a search.</h2>
             <div class="search-bar">
                 <input type="text" placeholder="Search protests.." name="search"> 
@@ -47,11 +46,47 @@
                 </a> 
             </div>
         </section>
+
+        <section class="container text-center">
+            <h2 class="text-decoration-underline">Protests in History</h2>
+            <div class="image-slide-wrapper">
+                <div class="image-slider">
+                    <img id="slide-1" src="/img/vietnam_war.png" alt="Protestors against the Vietnam War in 1965, holding signs at a march."/>
+                    <img id="slide-2" src="/img/police-brutality.png" alt="Protestors fighting for jobs and freedom with the NAACP in 1963, holding signs at the march."/>
+                    <img id="slide-3" src="/img/women-voting.png" alt="Suffragettes in New York fighting for a woman's right to vote, holding signs at a meeting."/>
+                </div>
+                <div class="slider-nav">
+                    <a href="#slide-1"></a>
+                    <a href="#slide-2"></a>
+                    <a href="#slide-3"></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="quotes text-center">
+            <h2 class="text-decoration-underline">Testimonials</h2>
+            <figure>
+                <blockquote class="blockquote">
+                  <p>"With Protests Hub, I feel empowered to be involved with my community and speak out on issues close to my heart."</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                  Aelysha Sharma
+                </figcaption>
+              </figure>
+            <figure>
+                <blockquote class="blockquote">
+                  <p>"The attention to detail, from coverage of protest categories to spotlighting user feedback, is commendable."</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                  Michaela Tran
+                </figcaption>
+            </figure>
+        </section>
     </main>
 
     <!-- Page footer -->
     <footer>
-        &copy;Copyright 2024 Protest Hub
+        &copy;Copyright 2024 Protests Hub
     </footer>
 </body>
 </html>

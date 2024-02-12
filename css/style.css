@@ -1,9 +1,79 @@
 * {
     font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
+    color: rgb(34, 21, 5); 
 }
 
 body {
     background-color: rgb(250, 238, 209);
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 2em;
+}
+
+.search-bar input {
+    width: 250px;
+    height: 30px;
+}
+
+.search-bar button {
+    width: 30px;
+    height: 30px;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.blockquote {
+    size: 0.5em;
+}
+
+.image-slide-wrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.image-slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
+}
+
+.image-slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: rgb(200, 174, 125);
+    opacity: 0.5;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
 }
 
 /* to add extra room for scrolling*/
@@ -34,28 +104,57 @@ header h2 {
 }
 
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(101, 69, 31);
-    overflow: hidden;
-}
-
-.navbar a {
-    float: left;
     color: rgb(250, 238, 209);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
 }
 
-.navbar a:hover {
+.protest-hub {
+    font-size: 1.5rem;
+    margin: .5rem;
+    color: rgb(250, 238, 209);
+}
+
+.nav-links ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgb(250, 238, 209);
+    padding: 1rem;
+    display: block;
+}
+
+.nav-links li:hover a:hover {
     background-color: rgb(200, 174, 125);
     color: rgb(71, 47, 17);
 }
 
-.navbar a.active {
-    background-color: rgb(71, 47, 17);
-    color: rgb(255, 255, 255);
+.hamburger-menu {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
 }
+
+.hamburger-menu .line {
+    height: 3px;
+    width: 100%;
+    background-color: rgb(250, 238, 209);
+    border-radius: 10px;
 
 #about {
     margin: 1em 5em;
@@ -151,8 +250,9 @@ h1 {
     /* font-size:  */
 }
 
-#slogan {
-    color: rgb(34, 21, 5);
+
+.card-title {
+    font-weight: bolder;
 }
 
 .map img {
@@ -160,48 +260,67 @@ h1 {
     max-width: 100%;
 }
 
+
 /* consider nav for phones, how to show all links??
 */
 @media (min-width: 598px) {
-    #hamburger-menu i {
-        display: none;
-    }
+
 }
 
 @media (min-width: 768px) {
-    html {
+    .nav-links ul {
+        display: flex;
     }
-    body {
 
+    .hamburger-menu {
+        display: none;
     }
-    footer {
+
+    .search-bar input {
+        width: 350px;
+        height: 40px;
+    }
+
+    .search-bar button {
+        width: 40px;
+        height: 40px;
     }
 }
 
 @media (min-width: 992px) {
-    nav a {
-        font-size: 1.5rem;
+    .search-bar input {
+        width: 450px;
+        height: 50px;
     }
-    body {
-    }
-    h1 {
-    }
-    h2 {
+    .search-bar button {
+        width: 50px;
+        height: 50px;
     }
 }
 
 @media (min-width: 1200px) {
-    body {
+    .search-bar input {
+        width: 550px;
+        height: 60px;
+    }
+    .search-bar button {
+        width: 60px;
+        height: 60px;
     }
 }
 
 #slogan {
     font-style: italic;
-    font-size: .5em;
+    font-weight: bolder;
+    font-size: 1.25em;
 }
 
 .search {
     text-align: center;
+}
+
+.search-bar {
+    padding: 0.5em;
 }
 
 .protest-list {
@@ -209,6 +328,11 @@ h1 {
 }
 
 footer {
-    position: fixed;
+    position: flex;
+    left: 0;
     bottom: 0;
+    width: 100%;
+    background-color: rgb(101, 69, 31);
+    color: rgb(250, 238, 209);
+    text-align: left;
 }
