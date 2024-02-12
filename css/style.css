@@ -30,6 +30,86 @@ body {
     color: rgb(255, 255, 255);
 }
 
+#rsvp {
+    border: solid 1px rgb(71, 47, 17);
+    box-shadow: 0 0 5px rgb(71, 47, 17);
+    padding: 1em 1em 0 1em;
+    margin: 2em;
+    max-width: 400px;
+    background-color: rgb(255, 246, 225);
+}
+
+#rsvp #top {
+    font-size: 1em;
+    max-height: 2em;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+
+}
+
+#rsvp #confirm {
+    margin: 1em 0 1em 0.5em;
+    font-weight: normal;
+    padding-bottom: 1em;
+}
+
+/* Might change to icon instead of x */
+#rsvp #x {
+    max-height: 2em;
+    background-color: red;
+    border: none;
+
+}
+
+#rsvp p {
+    font-size: 1em;
+    font-weight: bold;
+
+}
+
+#rsvp #input div {
+    margin: 1em 0 1em 0.5em;
+    display: flex;
+    margin-bottom: 1em;
+}
+
+#rsvp #input label {
+    display: flex;
+    margin-right: .5em;
+}
+
+#rsvp input {
+    min-width: 50%;
+}
+
+#rsvp #submit, #feedback #submit {
+    margin: 0 0 1em .5em;
+}
+
+#feedback {
+    padding: 1em 1.5em 1.5em 1.5em;
+    margin: auto;
+    margin-top: 2em;
+    width: 50%;
+    background-color: rgb(255, 246, 225);
+}
+
+#feedback div {
+    margin: 1em 0 1em 0.5em;
+    display: flex;
+    margin-bottom: 1em;
+}
+
+#feedback label {
+    display: flex;
+    margin-right: .5em;
+}
+
+#feedback input, #feedback textarea {
+    min-width: 50%;
+}
+
 h1 {
     color: rgb(34, 21, 5);
     font-size: 
