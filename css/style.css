@@ -1,62 +1,204 @@
 * {
     font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
+    color: rgb(34, 21, 5); 
+}
+
+html {
+    position: relative;
 }
 
 body {
     background-color: rgb(250, 238, 209);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
-/* to add extra room for scrolling*/
-html {
-    min-height: 50em;
+main {
+    padding: 2em;
+    height: 100%;
 }
 
-/* header with image*/ 
-#w-img {
-    background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../img/BLM-header.jpg");  
-    background-size: contain;
-    font-size: 1.5em;
+#slogan {
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 0.75em;
+    margin: .5em;
 }
 
-header h1, header h2, header #slogan {
+.search {
     text-align: center;
+}
+
+.search-bar {
+    padding: 0.5em;
+}
+
+
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding-left: 1em;
+    background-color: rgb(101, 69, 31);
+    color: rgb(250, 238, 209);
+    text-align: left;
+}
+/* for sliding images on home page, source: https://www.youtube.com/watch?v=McPdzhLRzCg */
+
+.search-bar input {
+    width: 250px;
+    height: 30px;
+}
+
+.search-bar button {
+    width: 30px;
+    height: 30px;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.blockquote {
+    size: 0.5em;
+}
+
+.image-slide-wrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.image-slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 0.5rem;
+}
+
+.image-slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: rgb(200, 174, 125);
+    opacity: 0.5;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+/* image sliding ends here */
+
+/* header image styles */
+
+#w-img {
+    background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../img/BLM-header.jpg"); 
+    background-size: contain;
+    background-color: rgb(101, 69, 31);
+    text-align: center;
+    font-size: 1.5em;
     color: rgb(255, 246, 225);
+    display: none;
 }
 
-header h1 {
-    padding-top: 2.5em;
-    margin-bottom: 0;
+#w-img h1 {
+    color: rgb(255, 246, 225);
+    font-size: 2em;
+    font-weight: bold;
+    padding-top: 2.0em;
+    margin-bottom: .25em;
 }
 
-header h2 {
-    padding-bottom: 3em;
+#w-img h2 {
+    padding-bottom: 1em;
     margin-top: 0;
 }
 
+/* header image ends here */
+
+/* for home page nav bar, source: https://www.youtube.com/watch?v=At4B7A4GOPg */
 .navbar {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(101, 69, 31);
-    overflow: hidden;
-}
-
-.navbar a {
-    float: left;
     color: rgb(250, 238, 209);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
 }
 
-.navbar a:hover {
+.protest-hub {
+    font-size: 1.5rem;
+    margin: .5rem;
+    color: rgb(250, 238, 209);
+}
+
+.nav-links ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgb(250, 238, 209);
+    padding: 1em;
+    display: block;
+}
+
+.nav-links li:hover a:hover {
     background-color: rgb(200, 174, 125);
     color: rgb(71, 47, 17);
 }
 
-.navbar a.active {
-    background-color: rgb(71, 47, 17);
-    color: rgb(255, 255, 255);
+.hamburger-menu {
+    position: absolute;
+    top: 1.0rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
 }
 
+.hamburger-menu .line {
+    height: 3px;
+    width: 100%;
+    background-color: rgb(250, 238, 209);
+    border-radius: 10px;
+}
+
+/* nav bar ends here */ 
+
+/* about styling starts here */
 #about {
     margin: 1em 5em;
 }
@@ -65,11 +207,13 @@ header h2 {
     max-width: 75%; /* space to add image to the side*/
 
 }
+/* about styling ends here */
 
+/* rsvp form styling starts here */
 #rsvp {
     border: solid 1px rgb(71, 47, 17);
     box-shadow: 0 0 5px rgb(71, 47, 17);
-    padding: 1em 1em 0 1em;
+    padding: 1em;
     margin: 2em;
     max-width: 400px;
     background-color: rgb(255, 246, 225);
@@ -81,12 +225,12 @@ header h2 {
     display: flex;
     justify-content: space-between;
     padding-bottom: 0;
-
 }
 
 #rsvp #confirm {
     margin: 1em 0 1em 0.5em;
     font-weight: normal;
+    font-size: 1em;
     padding-bottom: 1em;
 }
 
@@ -99,15 +243,15 @@ header h2 {
 }
 
 #rsvp p {
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: bold;
 
 }
 
 #rsvp #input div {
-    margin: 1em 0 1em 0.5em;
-    display: flex;
-    margin-bottom: 1em;
+    margin: 0.5em 0 1em 1.5em;
+    display: inline-block;
+    
 }
 
 #rsvp #input label {
@@ -120,15 +264,24 @@ header h2 {
 }
 
 #rsvp #submit, #feedback #submit {
-    margin: 0 0 1em .5em;
+    margin: 0 0 1em 1.5em;
 }
+
+/* rsvp form styling ends here */
+
+/* feedback form styling starts here */
 
 #feedback {
     padding: 1em 1.5em 1.5em 1.5em;
     margin: auto;
     margin-top: 2em;
-    width: 50%;
+    min-width: 50%;
+    max-width: 75%;
     background-color: rgb(255, 246, 225);
+}
+
+#feedback h2 {
+    font-weight: bold;
 }
 
 #feedback div {
@@ -146,73 +299,81 @@ header h2 {
     min-width: 50%;
 }
 
-h1 {
-    color: rgb(34, 21, 5);
-    /* font-size:  */
-}
+/* feedback form styling ends here */
 
-#slogan {
-    color: rgb(34, 21, 5);
-}
-
-.map img {
-    max-height: 100%;
-    max-width: 100%;
-}
-
-/* gonna try to make it "zoom" */
-.map img:hover {
-}
-
-/* consider nav for phones, how to show all links??
-*/
-@media (min-width: 598px) {
-    #hamburger-menu i {
-        display: none;
-    }
-}
-
-@media (min-width: 768px) {
-    html {
-    }
-    body {
-
-    }
-    footer {
-    }
-}
-
-@media (min-width: 992px) {
-    nav a {
-        font-size: 1.5rem;
-    }
-    body {
-    }
-    h1 {
-    }
-    h2 {
-    }
-}
-
-@media (min-width: 1200px) {
-    body {
-    }
-}
-
-#slogan {
-    font-style: italic;
-    font-size: .5em;
-}
-
-.search {
-    text-align: center;
+/* protest card styling starts here */
+.card-title {
+    font-weight: bolder;
 }
 
 .protest-list {
     text-align: left;
 }
+/* protest cards end here */
 
-footer {
-    position: fixed;
-    bottom: 0;
+/* styling for map */
+.map img {
+    max-height: 100%;
+    max-width: 100%;
 }
+/* map styling ends here */
+
+/* media queries */
+@media (min-width: 768px) {
+
+    #w-img {
+        display: block;
+    }
+
+    .nav-links ul {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .search-bar input {
+        width: 350px;
+        height: 40px;
+    }
+
+    .search-bar button {
+        width: 40px;
+        height: 40px;
+    }
+
+    #rsvp #input div {
+        margin: 1em 0 1em 1.5em;
+        display: flex;
+        margin-bottom: 1em;
+    }
+    
+    #rsvp #input label {
+        display: flex;
+        margin-right: .5em;
+    }
+}
+
+@media (min-width: 992px) {
+    .search-bar input {
+        width: 450px;
+        height: 50px;
+    }
+    .search-bar button {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .search-bar input {
+        width: 550px;
+        height: 60px;
+    }
+    .search-bar button {
+        width: 60px;
+        height: 60px;
+    }
+}
+/* media queries end here */
