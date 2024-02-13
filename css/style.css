@@ -4,6 +4,10 @@
     color: rgb(34, 21, 5); 
 }
 
+html {
+    position: relative;
+}
+
 body {
     background-color: rgb(250, 238, 209);
     margin: 0;
@@ -13,11 +17,14 @@ body {
 
 main {
     padding: 2em;
+    height: 100%;
 }
+
 #slogan {
     font-style: italic;
     font-weight: bolder;
-    font-size: 1.25em;
+    font-size: 0.75em;
+    margin: .5em;
 }
 
 .search {
@@ -30,10 +37,12 @@ main {
 
 
 footer {
-    position: flex;
+    position: absolute;
     left: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
+    padding-left: 1em;
     background-color: rgb(101, 69, 31);
     color: rgb(250, 238, 209);
     text-align: left;
@@ -106,22 +115,19 @@ footer {
 
 /* header image styles */
 
-/* to add extra room for scrolling*/
-html {
-    min-height: 50em;
-}
-
 #w-img {
-    background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("/img/BLM-header.jpg"); 
+    background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../img/BLM-header.jpg"); 
     background-size: contain;
-    font-size: 1.5em;
     text-align: center;
+    font-size: 1.5em;
     color: rgb(255, 246, 225);
-    display: none;
+    /*display: none;*/
 }
 
 #w-img h1 {
     color: rgb(255, 246, 225);
+    font-size: 2em;
+    font-weight: bold;
     padding-top: 2.0em;
     margin-bottom: .25em;
 }
@@ -206,7 +212,7 @@ html {
 #rsvp {
     border: solid 1px rgb(71, 47, 17);
     box-shadow: 0 0 5px rgb(71, 47, 17);
-    padding: 1em 1em 0 1em;
+    padding: 1em;
     margin: 2em;
     max-width: 400px;
     background-color: rgb(255, 246, 225);
@@ -223,6 +229,7 @@ html {
 #rsvp #confirm {
     margin: 1em 0 1em 0.5em;
     font-weight: normal;
+    font-size: 1em;
     padding-bottom: 1em;
 }
 
@@ -235,15 +242,15 @@ html {
 }
 
 #rsvp p {
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: bold;
 
 }
 
 #rsvp #input div {
-    margin: 1em 0 1em 0.5em;
-    display: flex;
-    margin-bottom: 1em;
+    margin: 0.5em 0 1em 1.5em;
+    display: inline-block;
+    
 }
 
 #rsvp #input label {
@@ -256,8 +263,9 @@ html {
 }
 
 #rsvp #submit, #feedback #submit {
-    margin: 0 0 1em .5em;
+    margin: 0 0 1em 1.5em;
 }
+
 /* rsvp form styling ends here */
 
 /* feedback form styling starts here */
@@ -266,8 +274,13 @@ html {
     padding: 1em 1.5em 1.5em 1.5em;
     margin: auto;
     margin-top: 2em;
-    width: 50%;
+    min-width: 50%;
+    max-width: 75%;
     background-color: rgb(255, 246, 225);
+}
+
+#feedback h2 {
+    font-weight: bold;
 }
 
 #feedback div {
@@ -314,10 +327,6 @@ html {
         display: none;
     }
 
-    #w-img {
-        display: block;
-    }
-
     .search-bar input {
         width: 350px;
         height: 40px;
@@ -326,6 +335,17 @@ html {
     .search-bar button {
         width: 40px;
         height: 40px;
+    }
+
+    #rsvp #input div {
+        margin: 1em 0 1em 1.5em;
+        display: flex;
+        margin-bottom: 1em;
+    }
+    
+    #rsvp #input label {
+        display: flex;
+        margin-right: .5em;
     }
 }
 
