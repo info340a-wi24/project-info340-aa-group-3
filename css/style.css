@@ -116,13 +116,13 @@ footer {
 /* header image styles */
 
 #w-img {
-    /* background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../img/BLM-header.jpg"); 
-    display issues on phone screen
-    background-size: contain; */
+    background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../img/BLM-header.jpg"); 
+    background-size: contain;
     background-color: rgb(101, 69, 31);
     text-align: center;
     font-size: 1.5em;
     color: rgb(255, 246, 225);
+    display: none;
 }
 
 #w-img h1 {
@@ -320,6 +320,11 @@ footer {
 
 /* media queries */
 @media (min-width: 768px) {
+
+    #w-img {
+        display: block;
+    }
+
     .nav-links ul {
         display: flex;
     }
@@ -369,14 +374,6 @@ footer {
     .search-bar button {
         width: 60px;
         height: 60px;
-    }
-
-    #w-img {
-        background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../img/BLM-header.jpg"); 
-        background-size: contain;
-        text-align: center;
-        font-size: 1.5em;
-        color: rgb(255, 246, 225);
     }
 }
 /* media queries end here */
