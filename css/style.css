@@ -198,17 +198,6 @@ footer {
 
 /* nav bar ends here */ 
 
-/* about styling starts here */
-#about {
-    margin: 1em 5em;
-}
-
-#about div {
-    max-width: 75%; /* space to add image to the side*/
-
-}
-/* about styling ends here */
-
 /* rsvp form styling starts here */
 #rsvp {
     border: solid 1px rgb(71, 47, 17);
