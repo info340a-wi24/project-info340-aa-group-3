@@ -37,6 +37,7 @@ function App(props) {
                 <Route path="protest-detail" element={<ProtestDetail />} />
                 <Route path="protest-rsvp" element={<ProtestRSVP />} />
               </Route> 
+              <Route path="*" element={<HomePage />} />
           </Routes>
         </div>   
       </main>
