@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Card, ListGroup} from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
+import ProtestRSVP from './ProtestRSVP';
 
 export default function ProtestList(props) {
     return (
@@ -24,7 +25,8 @@ export default function ProtestList(props) {
                     </ListGroup>
                     <Card.Body>
                         <Link className="btn btn-primary" to="protest-detail">Read More</Link>
-                        <Link className="btn btn-secondary" to="protest-rsvp">RSVP</Link>
+                        <ProtestRSVP className="btn btn-secondary" to="protest-rsvp">RSVP</ProtestRSVP> 
+                            {/* Change protest to use prop and pass the "title" element to RSVP */}
                     </Card.Body>
                 </Card>
             </div>

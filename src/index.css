@@ -199,13 +199,23 @@ footer {
 /* nav bar ends here */ 
 
 /* rsvp form styling starts here */
-#rsvp {
+#signUpForm {
+    background-color: white;
+    padding: 1em;
+    box-shadow: 0 0 5px rgb(71, 47, 17);
+}
+
+#signUpForm h2 {
+    font-size: 1.5em;
+}
+
+#signUpForm {
     border: solid 1px rgb(71, 47, 17);
     box-shadow: 0 0 5px rgb(71, 47, 17);
     padding: 1em;
-    margin: 2em;
-    max-width: 400px;
-    background-color: rgb(255, 246, 225);
+    max-width: 75%;
+    background-color: white;
+    border-radius: 10px;
 }
 
 #rsvp #top {
@@ -224,11 +234,9 @@ footer {
 }
 
 /* Might change to icon instead of x */
-#rsvp #x {
+#signUpForm #btn-danger {
     max-height: 2em;
-    background-color: red;
-    border: none;
-
+    margin-right: 0;
 }
 
 #rsvp p {
@@ -237,19 +245,8 @@ footer {
 
 }
 
-#rsvp #input div {
-    margin: 0.5em 0 1em 1.5em;
-    display: inline-block;
-    
-}
-
-#rsvp #input label {
-    display: flex;
-    margin-right: .5em;
-}
-
-#rsvp input {
-    min-width: 50%;
+#signUpForm input {
+    background-color: #f5f5f5;
 }
 
 #rsvp #submit, #feedback #submit {
@@ -342,6 +339,7 @@ footer {
         display: flex;
         margin-right: .5em;
     }
+
 }
 
 @media (min-width: 992px) {
@@ -352,6 +350,15 @@ footer {
     .search-bar button {
         width: 50px;
         height: 50px;
+    }
+
+    #signUpForm {
+        width: 500px;
+    }
+
+    #signUpForm input {
+        margin-left: 1.5em;
+        background-color: #f5f5f5;
     }
 }
 

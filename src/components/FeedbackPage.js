@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 export default function FeedbackPage() {
     let nameInput = document.querySelector('#nameInput');
     let emailInput = document.querySelector('#emailInput');
-    let allValid = 0;
     if(nameInput && emailInput){
 
         nameInput.addEventListener('input', () => {
@@ -14,7 +13,6 @@ export default function FeedbackPage() {
             } else{
                 nameInput.setCustomValidity("");
                 document.querySelector('#nameFeedback').textContent = "";
-                allValid += 1;
             }
             }); 
 
@@ -25,7 +23,6 @@ export default function FeedbackPage() {
             } else{
                 emailInput.setCustomValidity("");
                 document.querySelector('#emailFeedback').textContent = "";
-                allValid += 1;
             }
             }); 
     }
@@ -39,7 +36,6 @@ export default function FeedbackPage() {
             } else{
                 textInput.setCustomValidity("");
                 document.querySelector('#textFeedback').textContent = "";
-                allValid += 1;
             }
             }); 
     }
@@ -76,14 +72,3 @@ export default function FeedbackPage() {
         </section>
     );
 }
-
-/*function validateEmail() {
-    let input = document.querySelector('#emailInput');
-    if(input.value !== ""){
-        input.setCustomValidity("");
-        document.querySelector('#passwordConfirmFeedback').textContent = "";
-    } else{
-        input.setCustomValidity("Please enter an Email.");
-        document.querySelector('.invalid-feedback').textContent = "Please enter an Email.";
-    }
-  }*/
