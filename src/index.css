@@ -116,7 +116,7 @@ footer {
 /* header image styles */
 
 #w-img {
-    /* background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../img/BLM-header.jpg");  */
+    background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../public/images/BLM-header.jpg"); 
     background-size: contain;
     background-color: rgb(101, 69, 31);
     text-align: center;

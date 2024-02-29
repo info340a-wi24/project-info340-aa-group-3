@@ -7,13 +7,9 @@ import MapPage from './MapPage';
 import FeedbackPage from './FeedbackPage';
 import HomePage from './HomePage';
 
-import ProtestPage from './ProtestPage';
 import ProtestList from './ProtestList';
 import ProtestDetail from './ProtestDetail';
 import ProtestRSVP from './ProtestRSVP';
-
-import Picture from './Picture';
-import Interview from './Interview';
 
 function App(props) {
 
@@ -27,18 +23,21 @@ function App(props) {
         <div>
           <Nav />
         </div>
-        <div>
-        <Routes>
-            {/* <Route path="home" element={<HomePage />} /> */}
-            <Route path="about" element={<AboutPage />} />
-            <Route path="feedback" element={<FeedbackPage />} />
-            {/* <Route path="map" element={<MapPage />} /> */}
-            <Route path="*" element={<Navigate to="home"/>}/>
-        </Routes>
-        </div>   
       </header>
 
       <main>
+        <div>
+          <Routes>
+              <Route path="home" element={<HomePage />} />
+              <Route path="about" element={<AboutPage />} />
+              <Route path="feedback" element={<FeedbackPage />} />
+              <Route path="map" element={<MapPage />} />
+              <Route path="protest-list" element={<ProtestList />} />
+              <Route path="*" element={<Navigate to="home"/>}/>
+              <Route path="protest-detail" element={<ProtestDetail />} />
+              <Route path="protest-rsvp" element={<ProtestRSVP />} />
+          </Routes>
+        </div>   
       </main>
 
       <footer>

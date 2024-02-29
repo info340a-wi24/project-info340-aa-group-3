@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function Nav() {
+export default function Nav(props) {
   return (
     <nav class="navbar">
       <div class="protest-hub">Protests Hub</div>
