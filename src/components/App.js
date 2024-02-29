@@ -32,10 +32,11 @@ function App(props) {
               <Route path="about" element={<AboutPage />} />
               <Route path="feedback" element={<FeedbackPage />} />
               <Route path="map" element={<MapPage />} />
-              <Route path="protest-list" element={<ProtestList />} />
-              <Route path="*" element={<Navigate to="home"/>}/>
-              <Route path="protest-detail" element={<ProtestDetail />} />
-              <Route path="protest-rsvp" element={<ProtestRSVP />} />
+              <Route path="protest-list" >
+                <Route index element={<ProtestList />} />
+                <Route path="protest-detail" element={<ProtestDetail />} />
+                <Route path="protest-rsvp" element={<ProtestRSVP />} />
+              </Route> 
           </Routes>
         </div>   
       </main>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
 import Testimonials from './Testimonials';
 import ProtestHistorySlider from './ProtestHistorySlider';
 import { Link } from 'react-router-dom';
@@ -12,8 +11,7 @@ export default function HomePage(props) {
                 <Link className="btn btn-primary" to={`/protest-list`} title="Protests" > </Link> 
             </div>
             <ProtestHistorySlider />
-            <Testimonials />
-            <Outlet />   
+            <Testimonials /> 
         </div>
     )
 }

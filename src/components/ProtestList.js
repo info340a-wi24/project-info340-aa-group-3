@@ -1,11 +1,11 @@
 import React from 'react';
 import { Row, Card, ListGroup} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 export default function ProtestList(props) {
     return (
     <section>
-        <p class="text-center">Search Results For: "Protests in Washington"</p>
+        
         <div class="protest-list">
         <Row className="justify-content-center">
             <div class="col-auto">
@@ -23,8 +23,8 @@ export default function ProtestList(props) {
                         <ListGroup.Item as="li">Address: 3610 S Edmunds St Seattle, WA 98118</ListGroup.Item >
                     </ListGroup>
                     <Card.Body>
-                        <Link className="btn btn-primary" to={`/protest-detail`}>Read More</Link>
-                        <Link className="btn btn-secondary" to={`/protest-rsvp`}>RSVP</Link>
+                        <Link className="btn btn-primary" to="protest-detail">Read More</Link>
+                        <Link className="btn btn-secondary" to="protest-rsvp">RSVP</Link>
                     </Card.Body>
                 </Card>
             </div>
