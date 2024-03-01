@@ -199,31 +199,27 @@ footer {
 /* nav bar ends here */ 
 
 /* rsvp form styling starts here */
-#signUpForm {
-    background-color: white;
-    padding: 1em;
-    box-shadow: 0 0 5px rgb(71, 47, 17);
-}
 
 #signUpForm h2 {
-    font-size: 1.5em;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 1em;
 }
 
 #signUpForm {
-    border: solid 1px rgb(71, 47, 17);
-    box-shadow: 0 0 5px rgb(71, 47, 17);
+    border: solid 1px rgb(201, 171, 134);
+    box-shadow: 0 0 5px rgb(201, 171, 134);
     padding: 1em;
-    max-width: 75%;
     background-color: white;
     border-radius: 10px;
+    padding: 1em;
+    width: 250px;
 }
 
-#rsvp #top {
-    font-size: 1em;
-    max-height: 2em;
+#signUpForm #top, #feedbackForm #top{
     display: flex;
     justify-content: space-between;
-    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 #rsvp #confirm {
@@ -295,6 +291,15 @@ footer {
 .protest-list {
     text-align: left;
 }
+
+.protest-list .buttons {
+    display: flex;
+    margin: 1em;
+}
+
+.protest-list .btn-primary {
+    margin-right: 1em;
+}
 /* protest cards end here */
 
 /* styling for map */
@@ -329,6 +334,10 @@ footer {
         height: 40px;
     }
 
+    #signupform {
+        width: 350px;
+    }
+
     #rsvp #input div {
         margin: 1em 0 1em 1.5em;
         display: flex;
@@ -353,7 +362,7 @@ footer {
     }
 
     #signUpForm {
-        width: 500px;
+        width: 400px;
     }
 
     #signUpForm input {
