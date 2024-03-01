@@ -23,7 +23,7 @@ export default function ProtestList(props) {
                         <ListGroup.Item as="li">Location: PCC Community Markets - Columbia City Co-op</ListGroup.Item >
                         <ListGroup.Item as="li">Address: 3610 S Edmunds St Seattle, WA 98118</ListGroup.Item >
                     </ListGroup>
-                    <Card.Body>
+                    <Card.Body class="buttons">
                         <Link className="btn btn-primary" to="protest-detail">Read More</Link>
                         <ProtestRSVP className="btn btn-secondary" to="protest-rsvp">RSVP</ProtestRSVP> 
                             {/* Change protest to use prop and pass the "title" element to RSVP */}

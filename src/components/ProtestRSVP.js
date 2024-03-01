@@ -37,19 +37,22 @@ export default function ProtestRSVP(props) {
                 position="top left">
                 <section>
                     <form id="signUpForm" class="form">
-                        <Link to="/home" type="exit" class="btn btn-danger mb-3">Cancel</Link>
+                        <div id="top">
+                            <div> </div>
+                            <Link to="/home" type="exit" class="btn btn-danger mb-3">Cancel</Link>
+                        </div>
                         <h2>RSVP For {protest}</h2>
                         <div class="input-group row mb-4">
                         <label for="nameInput" class="col-lg-1">Name</label>
                             <div class="col-lg-11">
-                                <input type="name" id="nameInput" class="form-control" required/>
+                                <input type="name" id="nameInput" class="form-control" required title="Please enter your name."/>
                                 <div id="nameFeedback" class="invalid-feedback">Please provide a name.</div>
                             </div>
                         </div>
                         <div class="input-group row mb-3">
                         <label for="emailInput" class="col-lg-1">Email</label>
                             <div class="col-lg-11">
-                                <input type="email" id="emailInput" class="form-control" required/>
+                                <input type="email" id="emailInput" class="form-control" required title="Please enter your email."/>
                                 <div id="emailFeedback" class="invalid-feedback">Please provide a valid email.</div>
                             </div>
                         </div>
