@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import Popup from 'reactjs-popup';
 
 export default function ProtestRSVP(props) {
@@ -30,6 +31,12 @@ export default function ProtestRSVP(props) {
             }); 
     }
 
+    const [elementVisible, setElementVisible] = useState(true);
+    function close(){
+        setElementVisible(false);
+        return elementVisible;
+    };
+
     return (
         <div>
             <Popup trigger=
@@ -37,10 +44,6 @@ export default function ProtestRSVP(props) {
                 position="top left">
                 <section>
                     <form id="signUpForm" class="form">
-                        <div id="top">
-                            <div> </div>
-                            <Link to="/home" type="exit" class="btn btn-danger mb-3">Cancel</Link>
-                        </div>
                         <h2>RSVP For {protest}</h2>
                         <div class="input-group row mb-4">
                         <label for="nameInput" class="col-lg-1">Name</label>
@@ -63,3 +66,11 @@ export default function ProtestRSVP(props) {
         </div>
     )
 }
+
+/* 
+Close button doesn't close the pop-up
+<div id="top">
+    <div> </div>
+    <Link onClick={close} type="exit" class="btn btn-danger mb-3">Cancel</Link>
+</div>
+*/
