@@ -4,6 +4,8 @@ import React from 'react';
 import {APIProvider, Map, Marker} from '@vis.gl/react-google-maps';
 // make sure to npm install this in the project root directory
 // npm install @vis.gl/react-google-maps
+// open/code .env.local
+// paste this into .env.local REACT_APP_GOOGLE_MAP_API_KEY=AIzaSyCIUjbP49KH5M3KJ40_gYkVKqxqQCVDHps
 
 // export default function MapPage(props) {
 
