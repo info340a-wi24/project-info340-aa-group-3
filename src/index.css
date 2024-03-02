@@ -19,22 +19,13 @@ main {
     padding: 2em;
     height: 100%;
 }
-
+ /* Caption on protest hub header */
 #slogan {
     font-style: italic;
     font-weight: bolder;
     font-size: 0.75em;
     margin: .5em;
 }
-
-.search {
-    text-align: center;
-}
-
-.search-bar {
-    padding: 0.5em;
-}
-
 
 footer {
     position: absolute;
@@ -47,25 +38,8 @@ footer {
     color: rgb(250, 238, 209);
     text-align: left;
 }
+
 /* for sliding images on home page, source: https://www.youtube.com/watch?v=McPdzhLRzCg */
-
-.search-bar input {
-    width: 250px;
-    height: 30px;
-}
-
-.search-bar button {
-    width: 30px;
-    height: 30px;
-}
-
-.container {
-    padding: 2rem;
-}
-
-.blockquote {
-    size: 0.5em;
-}
 
 .image-slide-wrapper {
     position: relative;
@@ -204,15 +178,15 @@ footer {
 
 /* rsvp form styling starts here */
 
+#signUpForm h3 {
+    font-size: 1em;
+    font-weight: bolder;
+}
+
 #signUpForm h2 {
     font-size: 1.25em;
     margin-bottom: 1em;
     font-style: italic;
-}
-
-#signUpForm h3 {
-    font-size: 1em;
-    font-weight: bold;
 }
 
 #signUpForm {
@@ -226,76 +200,13 @@ footer {
     text-align: center;
 }
 
-#signUpForm #top, #feedbackForm #top{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0;
-}
-
-#rsvp #confirm {
-    margin: 1em 0 1em 0.5em;
-    font-weight: normal;
-    font-size: 1em;
-    padding-bottom: 1em;
-}
-
 /* Might change to icon instead of x */
 #signUpForm #btn-danger {
     max-height: 2em;
     margin-right: 0;
 }
 
-#rsvp p {
-    font-size: 1.5em;
-    font-weight: bold;
-
-}
-
-span .rsvp-title {
-    font-weight: bold;
-}
-
-#signUpForm input {
-    background-color: #f5f5f5;
-}
-
-#rsvp #submit, #feedback #submit {
-    margin: 0 0 1em 1.5em;
-}
-
 /* rsvp form styling ends here */
-
-/* feedback form styling starts here */
-
-#feedback {
-    padding: 1em 1.5em 1.5em 1.5em;
-    margin: auto;
-    margin-top: 2em;
-    min-width: 50%;
-    max-width: 75%;
-    background-color: rgb(255, 246, 225);
-}
-
-#feedback h2 {
-    font-weight: bold;
-}
-
-#feedback div {
-    margin: 1em 0 1em 0.5em;
-    display: flex;
-    margin-bottom: 1em;
-}
-
-#feedback label {
-    display: flex;
-    margin-right: .5em;
-}
-
-#feedback input, #feedback textarea {
-    min-width: 50%;
-}
-
-/* feedback form styling ends here */
 
 /* protest card styling starts here */
 .card-title {
@@ -326,13 +237,6 @@ span .rsvp-title {
 }
 /* protest cards end here */
 
-/* styling for map */
-.map img {
-    max-height: 100%;
-    max-width: 100%;
-}
-/* map styling ends here */
-
 /* media queries */
 @media (min-width: 768px) {
 
@@ -348,43 +252,9 @@ span .rsvp-title {
         display: none;
     }
 
-    .search-bar input {
-        width: 350px;
-        height: 40px;
-    }
-
-    .search-bar button {
-        width: 40px;
-        height: 40px;
-    }
-
-    #signupform {
-        width: 350px;
-    }
-
-    #rsvp #input div {
-        margin: 1em 0 1em 1.5em;
-        display: flex;
-        margin-bottom: 1em;
-    }
-    
-    #rsvp #input label {
-        display: flex;
-        margin-right: .5em;
-    }
-
 }
 
 @media (min-width: 992px) {
-    .search-bar input {
-        width: 450px;
-        height: 50px;
-    }
-    .search-bar button {
-        width: 50px;
-        height: 50px;
-    }
-
     #signUpForm {
         width: 400px;
     }
@@ -396,13 +266,6 @@ span .rsvp-title {
 }
 
 @media (min-width: 1200px) {
-    .search-bar input {
-        width: 550px;
-        height: 60px;
-    }
-    .search-bar button {
-        width: 60px;
-        height: 60px;
-    }
+
 }
 /* media queries end here */

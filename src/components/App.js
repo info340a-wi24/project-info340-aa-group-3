@@ -8,9 +8,6 @@ import MapPage from './MapPage';
 import FeedbackPage from './FeedbackPage';
 import HomePage from './HomePage';
 
-import ProtestList from './ProtestList';
-import ProtestDetail from './ProtestDetail';
-import ProtestRSVP from './ProtestRSVP';
 
 function App(props) {
 
@@ -35,11 +32,11 @@ function App(props) {
               <Route path="about" element={<AboutPage />} />
               <Route path="feedback" element={<FeedbackPage />} />
               <Route path="map" element={<MapPage />} />
-              <Route path="protest-list" >
-                <Route index element={<ProtestList cards={cards}/>} />
+              {/* <Route path="protest-list" >
+                <Route index element={<ProtestList />} />
                 <Route path="protest-detail" element={<ProtestDetail />} />
                 <Route path="protest-rsvp" element={<ProtestRSVP />} />
-              </Route> 
+              </Route>  */}
               <Route path="*" element={<HomePage />} />
           </Routes>
         </div>   

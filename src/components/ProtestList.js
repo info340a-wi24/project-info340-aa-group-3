@@ -1,6 +1,5 @@
 import React from 'react';
-import { Row, Card, ListGroup} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import {Row, Card, ListGroup} from 'react-bootstrap';
 import ProtestRSVP from './ProtestRSVP';
 import ProtestDetail from './ProtestDetail';
 
