@@ -3,14 +3,14 @@ import { NavLink } from 'react-router-dom';
 
 export default function Nav(props) {
   return (
-    <nav class="navbar">
-      <div class="protest-hub">Protests Hub</div>
+    <nav className="navbar">
+      <div className="protest-hub">Protests Hub</div>
         <a href="#" class="hamburger-menu">
-          <span class="line"></span>
-            <span class="line"></span>
-              <span class="line"></span>
+          <span className="line"></span>
+            <span className="line"></span>
+              <span className="line"></span>
         </a>
-      <div class="nav-links">
+      <div className="nav-links">
         <ul>
           <li><NavLink to="home">Home</NavLink></li>
           <li><NavLink to="about">About Us</NavLink></li>

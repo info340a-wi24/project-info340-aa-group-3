@@ -29,7 +29,7 @@ export default function SearchBar(props) {
             <input 
             type="text" 
             placeholder="Search for protests..." 
-            className="search"
+            className="search justify-content-center"
             onChange={handleSearch} />
             <ProtestList cards={searchMatches(protestData)} />
             <ProtestHistorySlider />

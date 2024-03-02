@@ -65,34 +65,30 @@ export default function FeedbackPage() {
 
   return (
         <section>
-            <form id="feedbackForm" class="form">
-                <div id="top">
-                    <div> </div>
-                    <Link to="/home" type="exit" class="btn btn-danger mb-3">Cancel</Link>
-                </div>
+            <form id="feedbackForm" className="form">
                 <h2>Help Protests Hub improve with your input!</h2>
-                <div class="input-group row mb-4">
-                <label for="nameInput" class="col-lg-1">Name</label>
-                    <div class="col-lg-11">
-                        <input type="name" id="nameInput" class="form-control" required title="Please enter your name."/>
-                        <div id="nameFeedback" class="invalid-feedback">Please provide a name.</div>
+                <div className="input-group row mb-4">
+                <label for="nameInput" className="col-lg-1">Name</label>
+                    <div className="col-lg-11">
+                        <input type="name" id="nameInput" className="form-control" required title="Please enter your name."/>
+                        <div id="nameFeedback" className="invalid-feedback">Please provide a name.</div>
                     </div>
                 </div>
-                <div class="input-group row mb-3">
-                <label for="emailInput" class="col-lg-1">Email</label>
-                    <div class="col-lg-11">
-                        <input type="email" id="emailInput" class="form-control" required title="Please enter your email."/>
-                        <div id="emailFeedback" class="invalid-feedback">Please provide a valid email.</div>
+                <div className="input-group row mb-3">
+                <label for="emailInput" className="col-lg-1">Email</label>
+                    <div className="col-lg-11">
+                        <input type="email" id="emailInput" className="form-control" required title="Please enter your email."/>
+                        <div id="emailFeedback" className="invalid-feedback">Please provide a valid email.</div>
                     </div>
                 </div>
-                <div class="input-group row mb-3">
-                <label for="feedbackInput" class="col-lg-1">Feedback</label>
-                    <div class="col-lg-11">
-                        <input type="textFeedback" id="textInput" class="form-control" required title="Please enter your feedback."/>
-                        <div id="textFeedback" class="invalid-feedback">Please enter your feedback.</div>
+                <div className="input-group row mb-3">
+                <label for="feedbackInput" className="col-lg-1">Feedback</label>
+                    <div className="col-lg-11">
+                        <input type="textFeedback" id="textInput" className="form-control" required title="Please enter your feedback."/>
+                        <div id="textFeedback" className="invalid-feedback">Please enter your feedback.</div>
                     </div>
                 </div>
-                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="submit" className="btn btn-primary">Submit</button>
             </form>
         </section>
     );

@@ -237,6 +237,24 @@ footer {
 }
 /* protest cards end here */
 
+
+/* search bar (trying to figure it out for next time)
+input.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+search bar ends here*/
+
+/* about page styling */
+.aboutTitle {
+    font-size: 2vw;
+}
+.textbox {
+    font-size: 1.5vw;
+}
+/* about page styling ends here */
+
 /* media queries */
 @media (min-width: 768px) {
 
