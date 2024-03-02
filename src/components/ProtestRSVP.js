@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+// import { useState } from 'react';
 import Popup from 'reactjs-popup';
 
 export default function ProtestRSVP(props) {
@@ -8,35 +7,35 @@ export default function ProtestRSVP(props) {
 
     let nameInput = document.querySelector('#nameInput');
     let emailInput = document.querySelector('#emailInput');
-    if(nameInput && emailInput){
+    if (nameInput && emailInput) {
 
         nameInput.addEventListener('input', () => {
-            if(nameInput.value = ""){
+            if (nameInput.value === "") {
                 nameInput.setCustomValidity("Please enter your name.");
                 document.querySelector('#nameFeedback').textContent = "Please enter your name.";
-            } else{
+            } else {
                 nameInput.setCustomValidity("");
                 document.querySelector('#nameFeedback').textContent = "";
             }
             }); 
 
         emailInput.addEventListener('input', () => {
-            if(!emailInput.value.includes('@')){
+            if (!emailInput.value.includes('@')) {
                 emailInput.setCustomValidity("Please enter your email.");
                 document.querySelector('#emailFeedback').textContent = "Please enter your name.";
-            } else{
+            } else {
                 emailInput.setCustomValidity("");
                 document.querySelector('#emailFeedback').textContent = "";
             }
             }); 
     }
 
-    const [elementVisible, setElementVisible] = useState(true);
-    function close(){
-        setElementVisible(false);
-        return elementVisible;
-    };
-
+    // const [elementVisible, setElementVisible] = useState(true);
+    // function close(){
+    //     setElementVisible(false);
+    //     return elementVisible;
+    // };
+    
     return (
         <div>
             <Popup trigger=
