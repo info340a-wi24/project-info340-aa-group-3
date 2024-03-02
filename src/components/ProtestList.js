@@ -1,37 +1,50 @@
 import React from 'react';
 import { Row, Card, ListGroup} from 'react-bootstrap';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ProtestRSVP from './ProtestRSVP';
+import ProtestDetail from './ProtestDetail';
 
 export default function ProtestList(props) {
+    let cards = props.cards;
+    let protestList = cards.map((card) => {
+        return <ProtestCard key={card.title} card={card} />;
+    })
+
     return (
     <section>
-        
-        <div class="protest-list">
+        <div className="protest-list">
+            {protestList}
+        </div>
+    </section>
+    )
+}
+
+function ProtestCard(props) {
+    let card = props.card;
+
+    return (
         <Row className="justify-content-center">
-            <div class="col-auto">
+            <div className="col-auto">
                 <Card className="mt-3" style={{width: '30rem'}}>
-                    {/* <img class="card-img-top" src="img/if-not-now.png" alt="Logo for If Not Now"> */}
+                    <img className="card-img-top" src={card.img} alt={card.img_alt_text} />
                     <Card.Body>
-                    <Card.Title>Stop Military Aid -leafletting event</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Organized by: If Not Now</Card.Subtitle>
+                    <Card.Title>{card.title}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Organized by: {card.organizer}</Card.Subtitle>
                     </Card.Body>
                     <ListGroup as="ul" className="list-group-flush">
-                        <ListGroup.Item as="li">Category: Israeli Occupation</ListGroup.Item >
-                        <ListGroup.Item as="li">Date: Saturday, February 10th</ListGroup.Item >
-                        <ListGroup.Item as="li">Time: 1:00-3:00 PM (PST)</ListGroup.Item >
-                        <ListGroup.Item as="li">Location: PCC Community Markets - Columbia City Co-op</ListGroup.Item >
-                        <ListGroup.Item as="li">Address: 3610 S Edmunds St Seattle, WA 98118</ListGroup.Item >
+                        <ListGroup.Item as="li"> <span className = "list-title"> Category: </span> {card.category} </ListGroup.Item >
+                        <ListGroup.Item as="li"> <span className = "list-title"> Date: </span> {card.date} </ListGroup.Item >
+                        <ListGroup.Item as="li"> <span className = "list-title"> Time: </span> {card.time} </ListGroup.Item >
+                        <ListGroup.Item as="li"> <span className = "list-title"> Location: </span> {card.location_name} </ListGroup.Item >
+                        <ListGroup.Item as="li"> <span className = "list-title"> Address: </span> {card.address} </ListGroup.Item >
                     </ListGroup>
-                    <Card.Body class="buttons">
-                        <Link className="btn btn-primary" to="protest-detail">Read More</Link>
-                        <ProtestRSVP className="btn btn-secondary" to="protest-rsvp">RSVP</ProtestRSVP> 
-                            {/* Change protest to use prop and pass the "title" element to RSVP */}
+                    <Card.Body className="buttons">
+                        <ProtestDetail info={card.description} title={card.title} className="btn btn-primary" to="protest-detail">Read More</ProtestDetail>
+                        <ProtestRSVP title={card.title} className="btn btn-secondary" to="protest-rsvp">RSVP</ProtestRSVP> 
                     </Card.Body>
                 </Card>
             </div>
         </Row>
-    </div>
-</section>
-    )
+    );
+ 
 }
