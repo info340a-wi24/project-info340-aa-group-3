@@ -35,7 +35,7 @@ function ProtestCard(props) {
                         <ListGroup.Item as="li"> <span className = "list-title"> Date: </span> {card.date} </ListGroup.Item >
                         <ListGroup.Item as="li"> <span className = "list-title"> Time: </span> {card.time} </ListGroup.Item >
                         <ListGroup.Item as="li"> <span className = "list-title"> Location: </span> {card.location_name} </ListGroup.Item >
-                        <ListGroup.Item as="li"> <span className = "list-title"> Address: </span> {card.address} </ListGroup.Item >
+                        <ListGroup.Item as="li"> <span className = "list-title"> Address: </span> {card.address} {card.zip} {card.city}, {card.state} </ListGroup.Item >
                     </ListGroup>
                     <Card.Body className="buttons">
                         <ProtestDetail info={card.description} title={card.title} className="btn btn-primary" to="protest-detail">Read More</ProtestDetail>
