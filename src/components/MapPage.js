@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useState } from 'react'; 
+import ProtestData from '../data/protestdata.json'; 
 import {APIProvider, Map, AdvancedMarker, InfoWindow} from '@vis.gl/react-google-maps';
 // make sure to npm install this in the project root directory
 // npm install @vis.gl/react-google-maps
@@ -27,7 +28,7 @@ import {APIProvider, Map, AdvancedMarker, InfoWindow} from '@vis.gl/react-google
     return (
         <>
         <h1> Map </h1>
-          <div style={{ height: "100vh", width: "100%" }}>
+          <div style={{ height: "100vh", width: "90%" }}>
             <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY}>
               <Map 
               defaultCenter={position} 
@@ -36,21 +37,31 @@ import {APIProvider, Map, AdvancedMarker, InfoWindow} from '@vis.gl/react-google
               <AdvancedMarker position={coord1} onClick={() => setOpen(true)}/>
               {open && (
                 <InfoWindow position={coord1} onCloseClick={() => setOpen(false)}>
-                  <h3>Hands Off Rafah - Ceasefire Now</h3>
+                  <h3>{ProtestData[0].title}</h3>
                   <hr />
-                  <h5>Palestinian Youth Movement</h5>
+                  <h5>{ProtestData[0].organizer}</h5>
+                  <p>Category: {ProtestData[0].category}</p>
+                  <p>{ProtestData[0].date}, {ProtestData[0].time}</p>
                 </InfoWindow>
                 )}
               <AdvancedMarker position={coord2} onClick={() => setOpen(true)}/>
               {open && (
                 <InfoWindow position={coord2} onCloseClick={() => setOpen(false)}>
-                  <h2>please work</h2>
+                  <h3>{ProtestData[1].title}</h3>
+                  <hr />
+                  <h5>{ProtestData[1].organizer}</h5>
+                  <p>Category: {ProtestData[1].category}</p>
+                  <p>{ProtestData[1].date}, {ProtestData[1].time}</p>
                 </InfoWindow>
                 )}
               <AdvancedMarker position={coord3} onClick={() => setOpen(true)}/>
               {open && (
                 <InfoWindow position={coord3} onCloseClick={() => setOpen(false)}>
-                  <h2>please work</h2>
+                  <h3>{ProtestData[2].title}</h3>
+                  <hr />
+                  <h5>{ProtestData[2].organizer}</h5>
+                  <p>Category: {ProtestData[2].category}</p>
+                  <p>{ProtestData[2].date}, {ProtestData[2].time}</p>
                 </InfoWindow>
                 )}
               </Map>
