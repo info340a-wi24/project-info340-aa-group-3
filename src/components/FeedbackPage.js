@@ -20,20 +20,16 @@ export default function FeedbackPage() {
     if(nameInput && emailInput){
         nameInput.addEventListener('input', () => {
             if(nameInput.value = ""){
-                nameInput.setCustomValidity("Please enter your name.");
                 document.getElementById('nameFeedback').textContent = "Please enter your name.";
             } else{
-                nameInput.setCustomValidity("");
                 document.getElementById('nameFeedback').textContent = "";
             }
             }); 
 
         emailInput.addEventListener('input', () => {
             if(!emailInput.value.includes('@')){
-                emailInput.setCustomValidity("Please enter your email.");
                 document.getElementById('emailFeedback').textContent = "Please enter your name.";
             } else{
-                emailInput.setCustomValidity("");
                 document.getElementById('emailFeedback').textContent = "";
             }
             }); 
@@ -43,10 +39,8 @@ export default function FeedbackPage() {
     if(textInput){
         textInput.addEventListener('input', () => {
             if(textInput = ""){
-                textInput.setCustomValidity("Please provide your feedback.");
                 document.getElementById('textFeedback').textContent = "Please provide your feedback.";
             } else{
-                textInput.setCustomValidity("");
                 document.getElementById('textFeedback').textContent = "";
             }
             }); 

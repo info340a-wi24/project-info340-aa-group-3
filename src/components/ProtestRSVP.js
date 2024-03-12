@@ -11,20 +11,16 @@ export default function ProtestRSVP(props) {
 
         nameInput.addEventListener('input', () => {
             if (nameInput.value === "") {
-                nameInput.setCustomValidity("Please enter your name.");
                 document.querySelector('#nameFeedback').textContent = "Please enter your name.";
             } else {
-                nameInput.setCustomValidity("");
                 document.querySelector('#nameFeedback').textContent = "";
             }
             }); 
 
         emailInput.addEventListener('input', () => {
             if (!emailInput.value.includes('@')) {
-                emailInput.setCustomValidity("Please enter your email.");
                 document.querySelector('#emailFeedback').textContent = "Please enter your name.";
             } else {
-                emailInput.setCustomValidity("");
                 document.querySelector('#emailFeedback').textContent = "";
             }
             }); 
