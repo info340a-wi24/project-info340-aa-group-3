@@ -10,7 +10,7 @@ export default function SearchBar(props) {
     
     const [searchTerm, setSearchTerm] = useState("");
     
-    const keys = ["category", "organizer", "date", "location_name", "state", "city", "zip"]
+    const keys = ["title", "category", "organizer", "date", "location_name", "state", "city", "zip"]
  
     const searchMatches = (data) => {
         return data.filter((protest) =>
