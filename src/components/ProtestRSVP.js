@@ -1,5 +1,5 @@
 import React from 'react';
-// import { useState } from 'react';
+import { useState } from 'react';
 import Popup from 'reactjs-popup';
 
 export default function ProtestRSVP(props) {
@@ -30,11 +30,19 @@ export default function ProtestRSVP(props) {
             }); 
     }
 
-    // const [elementVisible, setElementVisible] = useState(true);
-    // function close(){
-    //     setElementVisible(false);
-    //     return elementVisible;
-    // };
+    // not really sure why but doesn't work if I remove the status portion 
+    const [status, setStatus] = useState(false);
+    const handleClick = () => setStatus(true);
+
+    let submitBtn = document.getElementById('submit');
+    let rsvpContent = document.getElementById('content');
+    if(submitBtn){
+        submitBtn.addEventListener('click', () => {
+            if(rsvpContent !== ""){
+                document.getElementById('content').textContent = "You have successfully RSVPed. You will be notified with further details if any updates are made. Otherwise, you can expect a reminder 2 days before the planned event. You may now click out of this pop-up. Thank you!";
+            } 
+        }); 
+    }
     
     return (
         <div>
@@ -43,21 +51,23 @@ export default function ProtestRSVP(props) {
                 position="top left">
                     <form id="signUpForm" className="form">
                         <h2>RSVP For: </h2><div><h3>{protest}</h3></div>
-                        <div className="input-group row mb-4">
-                        <label for="nameInput" className="col-lg-1">Name</label>
-                            <div className="col-lg-11">
-                                <input type="name" id="nameInput" className="form-control" required title="Please enter your name."/>
-                                <div id="nameFeedback" className="invalid-feedback">Please provide a name.</div>
+                        <div id="content">
+                            <div className="input-group row mb-4">
+                            <label for="nameInput" className="col-lg-1">Name</label>
+                                <div className="col-lg-11">
+                                    <input type="name" id="nameInput" className="form-control" required title="Please enter your name."/>
+                                    <div id="nameFeedback" className="invalid-feedback">Please provide a name.</div>
+                                </div>
                             </div>
-                        </div>
-                        <div className="input-group row mb-3">
-                        <label for="emailInput" className="col-lg-1">Email</label>
-                            <div className="col-lg-11">
-                                <input type="email" id="emailInput" className="form-control" required title="Please enter your email."/>
-                                <div id="emailFeedback" className="invalid-feedback">Please provide a valid email.</div>
+                            <div className="input-group row mb-3">
+                            <label for="emailInput" className="col-lg-1">Email</label>
+                                <div className="col-lg-11">
+                                    <input type="email" id="emailInput" className="form-control" required title="Please enter your email."/>
+                                    <div id="emailFeedback" className="invalid-feedback">Please provide a valid email.</div>
+                                </div>
                             </div>
+                            <button type="submit" id="submit" className="btn btn-primary" onClick={handleClick}>Submit</button>
                         </div>
-                        <button type="submit" id="submit" className="btn btn-primary">Submit</button>
                     </form>
             </Popup>
         </div>
