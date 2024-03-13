@@ -26,14 +26,15 @@ export default function SearchBar(props) {
 
     return (
         <div>
+            <h2 className= "searchCaption">Search by protest name, organizer, date, or location!</h2>
             <input 
             type="text" 
             placeholder="Search for protests..." 
-            className="search justify-content-center"
-            onChange={handleSearch} />
-            <ProtestList cards={searchMatches(protestData)} />
-            <ProtestHistorySlider />
-            <Testimonials /> 
+            className="search"
+            onChange={handleSearch} />  
+            {searchTerm !== "" && <ProtestList cards={searchMatches(protestData)} />}            
+            {searchTerm === "" && <ProtestHistorySlider />}
+            {searchTerm === "" && <Testimonials /> }
         </div>
     )
     

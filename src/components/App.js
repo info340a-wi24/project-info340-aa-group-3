@@ -16,9 +16,9 @@ function App(props) {
   return (
     <div>
       <header>
-        <div id="w-img">
+        <div className="w-img">
               <h1><Link style={{textDecoration: 'none', color: `rgb(255, 246, 225)`}} to="home">Protests Hub </Link></h1> 
-              <h2 id="slogan">Make your voice heard. Find your people. It all starts with a search.</h2>   
+              <h2 className="slogan">Make your voice heard. Find your people. It all starts with a search.</h2>   
         </div>
         <div>
           <Nav />

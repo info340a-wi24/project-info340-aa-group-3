@@ -1,5 +1,4 @@
-{
-    "Protests" : [{"title": "Hands Off Rafah - Ceasefire Now",
+[{"title": "Hands Off Rafah - Ceasefire Now",
     "category": "Israeli Occupation",
     "organizer": "Palestinian Youth Movement",
     "description": "Seattle is home to major corporations, universities, politicians, and media that are supporting Israel's genocidal occupation. But Seattle is also home to hundreds of thousands of people who firmly stand with Palestine and their struggle for liberation! As Israel and the US threaten Rafah with invasion, the time is now to mobilize! No amount of repression and intimidation will stop us. Join us and continue to shut it down for Palestine! #shutitdown4palestine",
@@ -158,5 +157,5 @@
     "longitude": -122.31919062882663,
     "img": "images/ifnotnow.png",
     "img_alt_text": "Logo for If Not Now"
-    }]
 }
+]
