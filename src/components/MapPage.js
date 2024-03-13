@@ -66,7 +66,7 @@ function MapSearchBar({ onSearchedProtest }) {
         <>
         <h1> Protest Map </h1>
         <h2> Search for a protest and view its location</h2>
-          <div style={{ height: "100vh", width: "90%" }}>
+          <div style={{ height: "50vh", width: "100%" }}>
             <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY}>
               <MapSearchBar onSearchedProtest={handleSearch} />
               <Map 
