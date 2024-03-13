@@ -37,11 +37,11 @@ export default function ProtestRSVP(props) {
 
     // not really sure why but doesn't work if I remove the status portion 
     const [status, setStatus] = useState(false);
-    /*const handleClick = () => {
+    const handleClick = () => {
         setStatus(true);
-        setNum(num + 1);
+        //setNum(num + 1);
         //output.textContent = num + " people registered";
-    }*/
+    }
 
     let submitBtn = document.getElementById('submit');
     let rsvpContent = document.getElementById('content');
@@ -49,7 +49,7 @@ export default function ProtestRSVP(props) {
         submitBtn.addEventListener('click', () => {
             //this.preventDefault();
             if(rsvpContent !== ""){
-                setNum(num + 1);
+                //setNum(num + 1);
                 document.getElementById('content').textContent = "You have successfully RSVPed. You will be notified with further details if any updates are made. Otherwise, you can expect a reminder 2 days before the planned event. You may now click out of this pop-up. Thank you!";
                 } 
         }); 
@@ -88,6 +88,18 @@ export default function ProtestRSVP(props) {
       output.textContent += `${value}\n`;
     }*/
 
+    // might be helpful https://stackoverflow.com/questions/61840649/how-to-save-input-field-in-reactjs
+    // ts file https://www.youtube.com/watch?v=OPuWlYYGDu8
+    // https://www.youtube.com/watch?v=91TIUURx5JM
+    const [val, setVal] = useState("");
+    const click = () => {
+        alert(val)
+    }
+
+    const change = (event) => {
+        setVal(event.target.value)
+    }
+
     return (
         <div>
             <Popup trigger=
@@ -110,7 +122,7 @@ export default function ProtestRSVP(props) {
                                     <div id="emailFeedback" className="invalid-feedback">Please provide a valid email.</div>
                                 </div>
                             </div>
-                            <button type="submit" id="submit" className="btn btn-primary" onClick={() => {setStatus(true)}}>Submit</button>
+                            <button type="submit" id="submit" className="btn btn-primary" onClick={() => {click}}>Submit</button>
                         </div>
                     </form>
             </Popup>
