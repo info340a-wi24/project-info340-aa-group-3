@@ -11,22 +11,23 @@ import { firebaseConfig } from "./Config";
 const app = initializeApp(firebaseConfig);
 
 
-const database = getDatabase();
+// const database = getDatabase();
 //const protestRef = database.ref(`Protests/${cardId}`);
 
 export default function ProtestList(props) {
 
-    const [cards, setCards] = useState([]);
+    // const [cards, setCards] = useState([]);
 
-    useEffect(() => {
-      const cardsRef = ref(database, 'Protests');
-        onValue(cardsRef, (snapshot) => {
-            const cards = snapshot.val();
-            if (cards) {
-              setCards(Object.values(cards));
-            }
-          });
-        }, []);
+    // useEffect(() => {
+    //   const cardsRef = ref(database, 'Protests');
+    //     onValue(cardsRef, (snapshot) => {
+    //         const cards = snapshot.val();
+    //         if (cards) {
+    //           setCards(Object.values(cards));
+    //         }
+    //       });
+    //     }, []);
+    let cards = props.cards;
 
     let protestList = cards.map((card, index) => {
         return (

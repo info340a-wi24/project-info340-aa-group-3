@@ -8,18 +8,16 @@ import MapPage from './MapPage';
 import FeedbackPage from './FeedbackPage';
 import HomePage from './HomePage';
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref } from "firebase/database";
-import { firebaseConfig } from "./Config";
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getDatabase, ref } from "firebase/database";
+// import { firebaseConfig } from "./Config";
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getDatabase();
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const db = getDatabase();
 
 function App(props) {
-
-  const cards = SAMPLE_PROTESTS;
 
   return (
     <div>
@@ -40,11 +38,6 @@ function App(props) {
               <Route path="about" element={<AboutPage />} />
               <Route path="feedback" element={<FeedbackPage />} />
               <Route path="map" element={<MapPage />} />
-              {/* <Route path="protest-list" >
-                <Route index element={<ProtestList />} />
-                <Route path="protest-detail" element={<ProtestDetail />} />
-                <Route path="protest-rsvp" element={<ProtestRSVP />} />
-              </Route>  */}
               <Route path="*" element={<HomePage />} />
           </Routes>
         </div>   

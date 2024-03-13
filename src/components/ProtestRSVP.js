@@ -1,142 +1,106 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
+import { Modal, Button } from 'react-bootstrap';
 
 export default function ProtestRSVP(props) {
-    let protest = props.title; // set the protest title to the current protest
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [isValid, setIsValid] = useState(false); // State to track form validation
+    const [showSuccessModal, setShowSuccessModal] = useState(false); // State to track success modal visibility
 
-    let nameInput = document.querySelector('#nameInput');
-    let emailInput = document.querySelector('#emailInput');
-    let output = document.getElementById("registered");
+    const handleNameChange = (event) => {
+        setName(event.target.value);
+    };
 
-    const [num, setNum] = useState(0);
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    };
 
-    //let formData = new FormData();
-    if ((nameInput && emailInput) !== null) {
-
-        nameInput.addEventListener('input', () => {
-            //this.preventDefault();
-            if (nameInput.value === "") {
-                document.querySelector('#nameFeedback').textContent = "Please enter your name.";
-            } else {
-                document.querySelector('#nameFeedback').textContent = "";
-                //formData.append(nameInput);
-                //output.textContent += nameInput;
-            }
-            }); 
-
-        emailInput.addEventListener('input', () => {
-            if (!emailInput.value.includes('@')) {
-                document.querySelector('#emailFeedback').textContent = "Please enter your name.";
-            } else {
-                document.querySelector('#emailFeedback').textContent = "";
-            }
-            }); 
-    }
-
-
-    // not really sure why but doesn't work if I remove the status portion 
-    const [status, setStatus] = useState(false);
-    const handleClick = () => {
-        setStatus(true);
-        //setNum(num + 1);
-        //output.textContent = num + " people registered";
-    }
-
-    let submitBtn = document.getElementById('submit');
-    let rsvpContent = document.getElementById('content');
-    if(submitBtn && status === true){
-        submitBtn.addEventListener('click', () => {
-            //this.preventDefault();
-            if(rsvpContent !== ""){
-                //setNum(num + 1);
-                document.getElementById('content').textContent = "You have successfully RSVPed. You will be notified with further details if any updates are made. Otherwise, you can expect a reminder 2 days before the planned event. You may now click out of this pop-up. Thank you!";
-                } 
-        }); 
-        setStatus(false);
-    }
-
-
-    // https://www.learnwithjason.dev/blog/get-form-values-as-json/
-    /*function handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.target);
-        //const value = data.get('name');
-        const value = Object.fromEntries(data.entries());
-        document.getElementById('content').textContent = { value };
+        if (name.trim() === '') {
+            alert('Please enter your name.');
+            return;
+        }
+        if (!email.includes('@')) {
+            alert('Please enter a valid email.');
+            return;
+        }
+        // If form is valid, set isValid to true and show success modal
+        setIsValid(true);
+        setShowSuccessModal(true);
+    };
 
-        console.log({ value });
-      }
-
-    const form = document.getElementById('signUpForm');
-    if(form){
-        form.addEventListener('submit', handleSubmit);
-    }*/
-    //document.getElementById('registered').innerHTML = { formData };
-    
-    //const form = document.getElementById('signUpForm');
-    //const submitter = document.getElementById('submit');
-    /*const formData = new FormData();
-    if(nameInput !== null){
-        formData.append("name", nameInput);
-    }
-
-    const output = document.getElementById("registered");
-    output.textContent = "Registered people:";
-    
-    for (const [value] of formData) {
-      output.textContent += `${value}\n`;
-    }*/
-
-    // might be helpful https://stackoverflow.com/questions/61840649/how-to-save-input-field-in-reactjs
-    // ts file https://www.youtube.com/watch?v=OPuWlYYGDu8
-    // https://www.youtube.com/watch?v=91TIUURx5JM
-    const [val, setVal] = useState("");
-    const click = () => {
-        alert(val)
-    }
-
-    const change = (event) => {
-        setVal(event.target.value)
-    }
+    const closePopup = () => {
+        setName(''); // Reset form values
+        setEmail('');
+        setIsValid(false); // Reset validation state
+        setShowSuccessModal(false); // Reset success modal state
+    };
 
     return (
-        <div>
-            <Popup trigger=
-                {<button className="btn btn-secondary"> RSVP </button>}
-                position="top right">
-                    <form className="signUpForm form">
-                        <h2>RSVP For: </h2><div><h3>{protest}</h3></div>
+        <Popup
+            trigger={<button className="btn btn-secondary"> RSVP </button>}
+            position="top right"
+        >
+            {(close) => (
+                <div className="popup-content">
+                    <form className="signUpForm form" onSubmit={handleSubmit}>
+                        <h2>RSVP For: </h2>
+                        <div>
+                            <h3>{props.title}</h3>
+                        </div>
                         <div id="content">
                             <div className="input-group row mb-4">
-                            <label for="nameInput" className="col-lg-1">Name</label>
+                                <label htmlFor="nameInput" className="col-lg-1">
+                                    Name
+                                </label>
                                 <div className="col-lg-11">
-                                    <input type="name" id="nameInput" className="form-control" required title="Please enter your name."/>
-                                    <div id="nameFeedback" className="invalid-feedback">Please provide a name.</div>
+                                    <input
+                                        type="text"
+                                        id="nameInput"
+                                        className="form-control"
+                                        required
+                                        title="Please enter your name."
+                                        value={name}
+                                        onChange={handleNameChange}
+                                    />
                                 </div>
                             </div>
                             <div className="input-group row mb-3">
-                            <label for="emailInput" className="col-lg-1">Email</label>
+                                <label htmlFor="emailInput" className="col-lg-1">
+                                    Email
+                                </label>
                                 <div className="col-lg-11">
-                                    <input type="email" id="emailInput" className="form-control" required title="Please enter your email."/>
-                                    <div id="emailFeedback" className="invalid-feedback">Please provide a valid email.</div>
+                                    <input
+                                        type="email"
+                                        id="emailInput"
+                                        className="form-control"
+                                        required
+                                        title="Please enter your email."
+                                        value={email}
+                                        onChange={handleEmailChange}
+                                    />
                                 </div>
                             </div>
-                            <button type="submit" id="submit" className="btn btn-primary" onClick={() => {click}}>Submit</button>
+                            <button type="submit" className="btn btn-primary">
+                                Submit
+                            </button>
                         </div>
                     </form>
-            </Popup>
-        </div>
-    )
+                    <Modal show={showSuccessModal} onHide={closePopup}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>RSVP Confirmation</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>Your RSVP was successful!</Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={closePopup}>
+                                Close
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                </div>
+            )}
+        </Popup>
+    );
 }
-
-/* 
-Close button doesn't close the pop-up
-<div id="top">
-    <div> </div>
-    <Link onClick={close} type="exit" className="btn btn-danger mb-3">Cancel</Link>
-</div>
-
-<button type="submit" id="submit" className="btn btn-primary" onClick={() => {setStatus(true); setNum(num + 1); document.getElementById('content').textContent = "You have successfully RSVPed. You will be notified with further details if any updates are made. Otherwise, you can expect a reminder 2 days before the planned event. You may now click out of this pop-up. Thank you!"}}>Submit</button>
-
-*/
