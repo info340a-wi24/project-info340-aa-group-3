@@ -8,7 +8,7 @@ html {
     position: relative;
 }
 
-body {
+body, html {
     background-color: rgb(250, 238, 209);
     margin: 0;
     padding: 0;
@@ -18,13 +18,6 @@ body {
 main {
     padding: 2em;
     height: 100%;
-}
- /* Caption on protest hub header */
-#slogan {
-    font-style: italic;
-    font-weight: bolder;
-    font-size: 0.75em;
-    margin: .5em;
 }
 
 footer {
@@ -89,7 +82,7 @@ footer {
 
 /* header image styles */
 
-#w-img {
+.w-img {
     background: linear-gradient(rgba(71, 47, 17, 0.75), rgba(37, 24, 8, 0.75)), url("../public/images/BLM-header.jpg"); 
     background-size: contain;
     background-color: rgb(101, 69, 31);
@@ -99,7 +92,7 @@ footer {
     display: none;
 }
 
-#w-img h1 {
+.w-img h1 {
     color: rgb(255, 246, 225);
     font-size: 2em;
     font-weight: bold;
@@ -107,9 +100,17 @@ footer {
     margin-bottom: .25em;
 }
 
-#w-img h2 {
+.w-img h2 {
     padding-bottom: 1em;
     margin-top: 0;
+}
+
+ /* Caption on protest hub header */
+ .slogan {
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 0.75em;
+    margin: .5em;
 }
 
 /* header image ends here */
@@ -130,6 +131,10 @@ footer {
     color: rgb(250, 238, 209);
 }
 
+.nav-links.show ul {
+    display: flex;
+}
+
 .nav-links ul {
     margin: 0;
     padding: 0;
@@ -142,6 +147,7 @@ footer {
 
 .nav-links li a {
     text-decoration: none;
+    font-size: 1em;
     color: rgb(250, 238, 209);
     padding: 1em;
     display: block;
@@ -170,6 +176,29 @@ footer {
     border-radius: 10px;
 }
 
+/* nav bar ends here */ 
+
+/* search bar styling */
+
+.search {
+    margin: 0 auto;
+    display: block;
+    width: 60%;
+    height: 2.5em;
+    font-size: 1.25em;
+    margin-bottom: 3em;
+}
+
+.searchCaption {
+    text-align: center;
+    font-size: 1em;
+    font-style: italic;
+}
+
+/* search bar styling ends here */
+
+/* for testimonials */
+
 .quotes {
     margin-top: 2.5em;
 }
@@ -178,22 +207,24 @@ footer {
     font-style: italic;
     color: rgb(34, 21, 5); 
 }
-/* nav bar ends here */ 
 
-/* rsvp form styling starts here */
+/* testimonial styles end here */
 
-#signUpForm h3 {
+/* rsvp form and feedback form styling starts here */
+
+.signUpForm h3 {
     font-size: 1em;
     font-weight: bolder;
 }
 
-#signUpForm h2 {
+.signUpForm h2 {
     font-size: 1.25em;
     margin-bottom: 1em;
     font-style: italic;
 }
 
-#signUpForm {
+.signUpForm {
+    justify-content: center;
     border: solid 1px rgb(201, 171, 134);
     box-shadow: 0 0 5px rgb(201, 171, 134);
     padding: 1em;
@@ -204,22 +235,32 @@ footer {
     text-align: center;
 }
 
-/* Might change to icon instead of x */
-#signUpForm #btn-danger {
+/* Might change to icon instead of x
+.signUpForm #btn-danger {
     max-height: 2em;
     margin-right: 0;
-}
+} */
 
-/* rsvp form styling ends here */
+/* rsvp form and feedback form styling ends here */
 
 /* protest card styling starts here */
+.card {
+    margin-top: 1.5rem;
+    width: 100%;
+    font-size: 1.25em;
+}
+
+.card:not(:first-child) {
+    margin-left: 1rem;
+}
+
 .card-title {
     font-weight: bolder;
 }
 
 .card-img-top {
     width: 100%;
-    height: 10vw;
+    height: 12vw;
     object-fit: cover;
     display: none;
 }
@@ -243,15 +284,6 @@ footer {
 }
 /* protest cards end here */
 
-
-/* search bar (trying to figure it out for next time)
-input.search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-search bar ends here*/
-
 /* about page styling */
 .aboutTitle {
     font-size: 1.5em;
@@ -262,14 +294,15 @@ search bar ends here*/
 }
 /* about page styling ends here */
 
-.cardStyle {
-    min-width: 15rem;
-}
-
 /* media queries */
 @media (min-width: 768px) {
+    .search {
+        height: 3em;
+    }
+
     .aboutTitle {
         font-size: 2em;
+        margin-bottom: 1em;
     }
 
     .cardStyle {
@@ -284,7 +317,11 @@ search bar ends here*/
         font-size: 1.5em;
     }
 
-    #w-img {
+    .textbox .endParagraph {
+        padding-bottom: 0;
+    }
+
+    .w-img {
         display: block;
     }
 
@@ -299,17 +336,29 @@ search bar ends here*/
 }
 
 @media (min-width: 992px) {
-    #signUpForm {
+    .search {
+        width: 45%;
+        height: 3.5em;
+    }
+
+    .signUpForm {
         width: 400px;
     }
 
-    #signUpForm input {
+    .signUpForm input {
         margin-left: 1.5em;
         background-color: #f5f5f5;
     }
 }
 
 @media (min-width: 1200px) {
+    .search {
+        width: 30%;
+        height: 4em;
+    }
 
+    .searchCaption {
+        font-size: 1.25em;
+    }
 }
 /* media queries end here */

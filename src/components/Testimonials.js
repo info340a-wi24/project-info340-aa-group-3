@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Testimonials(props) {
-    const emptySearchTerm = props.currSearch;
         return (
             <div>
                 <section className="quotes text-center">

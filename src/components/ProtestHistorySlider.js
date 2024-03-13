@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function ProtestHistorySlider(props) {
-    const emptySearchTerm = props.currSearch;
     return (
         <div>
             <section className="container text-center">
