@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Card, ListGroup } from 'react-bootstrap';
 import ProtestRSVP from './ProtestRSVP';
 import ProtestDetail from './ProtestDetail';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { firebaseConfig } from "./Config";
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+const database = getDatabase();
+//const protestRef = database.ref(`Protests/${cardId}`);
 
 export default function ProtestList(props) {
-    let cards = props.cards;
+
+    const [cards, setCards] = useState([]);
+
+    useEffect(() => {
+      const cardsRef = ref(database, 'Protests');
+        onValue(cardsRef, (snapshot) => {
+            const cards = snapshot.val();
+            if (cards) {
+              setCards(Object.values(cards));
+            }
+          });
+        }, []);
+
     let protestList = cards.map((card, index) => {
         return (
             // Create variable to check start of new row
@@ -15,6 +38,7 @@ export default function ProtestList(props) {
             </div>
         );
     });
+
 
     return (
         // Make sure cards are centered, and make a new row depending on number of cards
@@ -28,6 +52,7 @@ export default function ProtestList(props) {
 
 function ProtestCard(props) {
     let card = props.card;
+
     let isFirst = props.isFirst
     return (
         // Only return cards
@@ -55,5 +80,6 @@ function ProtestCard(props) {
                 </div>
             </Card.Body>
         </Card>
+
     );
 }
