@@ -103,9 +103,9 @@ export default function ProtestRSVP(props) {
     return (
         <div>
             <Popup trigger=
-                {<button className="btn btn-secondary"> {num} RSVP </button>}
-                position="top left">
-                    <form id="signUpForm" className="form">
+                {<button className="btn btn-secondary"> RSVP </button>}
+                position="top right">
+                    <form className="signUpForm form">
                         <h2>RSVP For: </h2><div><h3>{protest}</h3></div>
                         <div id="content">
                             <div className="input-group row mb-4">

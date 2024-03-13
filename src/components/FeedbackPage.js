@@ -73,7 +73,7 @@ export default function FeedbackPage() {
 
   return (
         <section>
-            <form id="feedbackForm" className="form">
+            <form className="feedbackForm form">
                 <h2>Help Protests Hub improve with your input!</h2>
                 <div id="content">
                     <div className="input-group row mb-4">
