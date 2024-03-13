@@ -3,78 +3,76 @@
 import React from 'react';
 import { useState } from 'react'; 
 import ProtestData from '../data/protestdata.json'; 
-import {APIProvider, Map, AdvancedMarker, InfoWindow} from '@vis.gl/react-google-maps';
-// make sure to npm install this in the project root directory
+import { APIProvider, Map, AdvancedMarker, InfoWindow } from '@vis.gl/react-google-maps';
+import MapSearchBar from './MapSearchBar';
+
+// make sure to npm install this in the project root directory: 
 // npm install @vis.gl/react-google-maps
 
   export default function MapPage(props) {
-    // hands off rafah protest
-    const coord1 = {lat: 47.619298853329724, lng: -122.34093600187532}; 
-
-    // end vegan milk surcharge protest 
-    const coord2 = {lat: 47.61532143431974, lng: -122.33819474770648}; 
-
-    // protest jimmy johns and inspire brands 
-    const coord3 = {lat: 47.70849543469973, lng: -122.32231101858588}; 
 
     // starting point - drumheller fountain
-    const position = {lat: 47.65396543841683, lng: -122.3077699312834}
+    const position = {lat: 47.65396543841683, lng: -122.3077699312834}; 
 
-    const [open, setOpen] = useState(false); 
+    // opens an info window if clicked 
+    const [open, setOpen] = useState(null); 
 
-    // clicking works but maybe not on multiple things?
-    // try to make a function that takes in a coord & only opens based on that
+    // handles clicking on the marker
+    function markerHandler(protestTitle) {
+      setOpen(protestTitle); 
+    }
+
+    // handles closing the InfoWindow
+    function infoWindowCloseHandler() {
+      setOpen(null); 
+    }
+
+
+    // somehow connect the search bar with the location/protest name 
+    // the location/protest name will connect with the coordinate
+    // the specific coordinate will allow them to see the specific info window
+    // or data on the side if possible
+
+    // 1) user types in the search result - this will be connected to the db 
+    // 2) the event.target.value of the handle search will be the search term
+    // 3) this value will now be the one that we use to show the marker/info
+    // 4) pass this to the createMarker
+    // 5) Set open is seperate - may need to do this logic outside/in it's own 
+    // function 
 
     return (
         <>
-        <h1> Map </h1>
+        <h1> Protest Map </h1>
           <div style={{ height: "100vh", width: "90%" }}>
             <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY}>
+              <MapSearchBar />
               <Map 
               defaultCenter={position} 
-              defaultZoom={11}
+              defaultZoom={5}
               mapId={process.env.REACT_APP_PUBLIC_MAP_ID}>
-              <AdvancedMarker position={coord1} onClick={() => setOpen(true)}/>
-              {open && (
-                <InfoWindow position={coord1} onCloseClick={() => setOpen(false)}>
-                  <h3>{ProtestData[0].title}</h3>
-                  <hr />
-                  <h5>{ProtestData[0].organizer}</h5>
-                  <p>Category: {ProtestData[0].category}</p>
-                  <p>{ProtestData[0].date}, {ProtestData[0].time}</p>
-                </InfoWindow>
-                )}
-              <AdvancedMarker position={coord2} onClick={() => setOpen(true)}/>
-              {open && (
-                <InfoWindow position={coord2} onCloseClick={() => setOpen(false)}>
-                  <h3>{ProtestData[1].title}</h3>
-                  <hr />
-                  <h5>{ProtestData[1].organizer}</h5>
-                  <p>Category: {ProtestData[1].category}</p>
-                  <p>{ProtestData[1].date}, {ProtestData[1].time}</p>
-                </InfoWindow>
-                )}
-              <AdvancedMarker position={coord3} onClick={() => setOpen(true)}/>
-              {open && (
-                <InfoWindow position={coord3} onCloseClick={() => setOpen(false)}>
-                  <h3>{ProtestData[2].title}</h3>
-                  <hr />
-                  <h5>{ProtestData[2].organizer}</h5>
-                  <p>Category: {ProtestData[2].category}</p>
-                  <p>{ProtestData[2].date}, {ProtestData[2].time}</p>
-                </InfoWindow>
-                )}
+                {ProtestData.map((protest) => (
+                <AdvancedMarker 
+                key={protest.title}
+                position={{lat: protest.latitude, lng: protest.longitude}} 
+                onClick={() => markerHandler(protest.title)}/>
+                ))}
+                {open && (
+                  <InfoWindow 
+                  position={{lat: ProtestData.find(protest => protest.title === open).latitude
+                  , lng: ProtestData.find(protest => protest.title === open).longitude}} 
+                  onCloseClick={infoWindowCloseHandler}>
+                  <div> 
+                    <h3>{open}</h3>
+                    <hr />
+                    <h5>{ProtestData.find(protest => protest.title === open).organizer}</h5>
+                    <p>Category: {ProtestData.find(protest => protest.title === open).category}</p>
+                    <p>{ProtestData.find(protest => protest.title === open).date}, {ProtestData.find(protest => protest.title === open).time}</p>
+                    </div> 
+                  </InfoWindow>
+                  )}
               </Map>
           </APIProvider>
           </div>
       </>
-    )
-
-        // return (
-    //     <>
-    //     <p>testing</p>
-    //     <img src="images/pcc-map.png" alt="Google Map view of Edmonds, WA."/>
-    //     </>
-    // )
-
+    ); 
   }
