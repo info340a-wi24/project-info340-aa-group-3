@@ -1,12 +1,36 @@
-import React from 'react';
-import {Row, Card, ListGroup} from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import {Row, Card, ListGroup, Button} from 'react-bootstrap';
 import ProtestRSVP from './ProtestRSVP';
 import ProtestDetail from './ProtestDetail';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { firebaseConfig } from "./Config";
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+const database = getDatabase();
+//const protestRef = database.ref(`Protests/${cardId}`);
 
 export default function ProtestList(props) {
-    let cards = props.cards;
+    //let cards = props.cards;
+
+    const [cards, setCards] = useState([]);
+
+    useEffect(() => {
+      const cardsRef = ref(database, 'Protests');
+        onValue(cardsRef, (snapshot) => {
+            const cards = snapshot.val();
+            if (cards) {
+              setCards(Object.values(cards));
+            }
+          });
+        }, []);
+
     let protestList = cards.map((card) => {
-        return <ProtestCard key={card.title} card={card} />;
+        return <ProtestCard key={card} card={card}/>;
     })
 
     return (
@@ -20,6 +44,8 @@ export default function ProtestList(props) {
 
 function ProtestCard(props) {
     let card = props.card;
+    //Create and set the likes variable that will show up on the card
+    //let [likes, setLikes] = useState(props.initialLikes);
 
     return (
         <Row className="justify-content-center">
@@ -40,6 +66,9 @@ function ProtestCard(props) {
                     <Card.Body className="buttons">
                         <ProtestDetail info={card.description} title={card.title} className="btn btn-primary" to="protest-detail">Read More</ProtestDetail>
                         <ProtestRSVP title={card.title} className="btn btn-secondary" to="protest-rsvp">RSVP</ProtestRSVP> 
+                        {/* <Button onClick={handleLike}>
+                            Like ({likes})
+                        </Button> */}
                     </Card.Body>
                 </Card>
             </div>
